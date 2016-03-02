@@ -1,28 +1,30 @@
+import os,json
 import requests
 from bs4 import BeautifulSoup
-
-# Put File path here
-FILE = ""
-
-soup=BeautifulSoup(open(FILE))
-question = soup.find_all("a",{"class":"question_link","target":"_top"})
-for link in question:
-	print link.get("href")[1:]
-"""
-topic=[]
-print topic
-c=soup.find_all("span",{"class":"TopicNameSpan TopicName"})
-for t in c:
-	s=t.getText()
-	if s not in topic:
-		#print str(s),type(s)
-		topic.append(str(s))
-print topic
-"""
-children=soup.find_all("div",{"class":"QuestionTopicListItem TopicListItem topic_pill"})
-newtopic=[]
-for child in children:
-	s=child.find_all("span",{"class":"TopicNameSpan TopicName"})
-	for q in s:
-		newtopic.append(str(q.getText()))
-print newtopic
+dic={}
+count=0
+for i in os.listdir('~/Documents/DA/Quora_logs'):
+	filename="~/Documents/DA/Quora_logs/"+i
+	#print filename
+	soup=BeautifulSoup(open(filename))
+	question = soup.find_all("div",{"class":"revision"})
+	try:
+		q=question[-1]
+		#print q.getText()
+		q=q.getText()
+		q=q.encode('utf-8')
+		print q
+		topic=soup.find_all("span",{"class":"TopicName"})
+		topics=[]
+		for i in topic:
+			topics.append((i.getText()).encode('utf-8'))
+		#print topics
+		try:
+			dic[q]=topics
+		except UnicodeEncodeError:
+			print "can't write"
+	except IndexError:
+		pass
+filehandle=open("text.txt","w")
+json.dump(dic,filehandle,indent=2)
+filehandle.close()
