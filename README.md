@@ -16,6 +16,6 @@
 - [Arnav Jain](https://github.com/arnavkj1995)
 - [Divyansh Gupta](https://github.com/guptadivyansh)
 - [Nishant Nikhil](https://github.com/nishnik/)
-- [Shubham Agrawal]()
+- [Shubham Agrawal](https://github.com/shubham0473)
 
 Resources are available [here](resources.md).
