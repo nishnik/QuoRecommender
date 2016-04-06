@@ -18,7 +18,7 @@ def clean_ques(ques):
 	ques = tokenizer.tokenize(ques)
 	for i in range(len(ques)):
 		if not enchant.dict_exists(ques[i]):
- 			ques[i] = dictionary.suggest(sent)[0]
+ 			ques[i] = dictionary.suggest(ques[i])[0]
 	#ques = [q for q in ques if q not in stop]
 	ques = [stemmer.stem(q) for q in ques if q not in stop]
 	return ques
