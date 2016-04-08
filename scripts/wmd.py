@@ -41,7 +41,7 @@ def clean_ques(query):
 def wcd(sent1, sent2):
 	# here sent1 & sent2 both are list of words
 	try:
-		if(len(sent1)>0 and len(sent2)>0):
+		if(len(sent1)>0 and len(sent2) > 0):
 			s1 = wordvec(sent1[0])
 			s2 = wordvec(sent2[0])
 		else:

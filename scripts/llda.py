@@ -8,16 +8,19 @@
 
 from optparse import OptionParser
 import sys, re, numpy
+import json
 
 def load_corpus(filename):
     corpus = []
     labels = []
     labelmap = dict()
-    f = open(filename, 'r')
-    for line in f:
+    with open(filename) as f:
+        data = json.load(f)    
+
+    for line, value in data.items():
         mt = re.match(r'\[(.+?)\](.+)', line)
         if mt:
-            label = mt.group(1).split(',')
+            label = value
             for x in label: labelmap[x] = 1
             line = mt.group(2)
         else:

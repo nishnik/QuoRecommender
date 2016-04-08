@@ -31,5 +31,5 @@ for i in range(len(ques)):
 bigram = Phrases(ques_stream)
 trigram = Phrases(bigram[ques_stream])
 
-print (trigram[bigram[clean_ques('This is the New York life in this big city of san francisco and watching game of thrones')]])
+print (trigram[bigram[clean_ques('What is the traffic like from Palo Alto to San Francisco at 3PM on an average weekday?')]])
 #for any new sentence we will be using (trigram[bigram[sent]])
