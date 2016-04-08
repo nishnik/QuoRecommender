@@ -10,22 +10,28 @@ from numpy import genfromtxt
 import sys
 import json, gensim, logging
 
+
+model = gensim.models.Word2Vec.load('vectors.bin', True)
 with open('text.json') as data_file:
 	data=json.load(data_file)# type(data)=dict
 ques=list(data.keys())
+# for i in data:
+# 	if(len(i)!=0):
+# 		ques.append(i)
+print(len(ques))
+# ques=[q for q in ques1 if(len(q)!=0)]
+# print(len(ques))
+# for i in range(len(ques)):
+# 	if(len(ques[i])==0):
+# 		del ques[i]
+# print(len(ques))
 tokenizer = RegexpTokenizer(r'\w+')
 stop = stopwords.words('english')
 dictionary = enchant.request_dict("en_US")
 #stemmer = SnowballStemmer("english")
 
-model = gensim.models.Word2Vec.load('/home/adarsh/wordmodel',True)
-
-def wordvec(word):
-	return model[word]
-
 def clean_ques(query):
 	# here query is list of words that are present in the question
-	query = ''.join([i for i in query if not i.isdigit()])
 	query = query.lower()# converted to lowercase alphabet
 	query = tokenizer.tokenize(query) # tokenized
 	# for i in range(len(ques)):
@@ -33,19 +39,20 @@ def clean_ques(query):
  	# 		ques[i] = dictionary.suggest(sent)[0]
 	query = [q for q in query if q not in stop] # removed stop words
 	return query
-
 #word1=clean_ques("What are the best places to learn how to dance in Philadelphia?")
 #word2=clean_ques("Political Science: What factors tend shift a population in a more liberal or more conservative direction?")
+def wordvec(word):
+	return model[word]
 
 #Get the Word Centroid Distance
 def wcd(sent1, sent2):
 	# here sent1 & sent2 both are list of words
 	try:
-		if(len(sent1)>0 and len(sent2) > 0):
+		if(len(sent1)>0 and len(sent2)>0):
 			s1 = wordvec(sent1[0])
 			s2 = wordvec(sent2[0])
 		else:
-			return 0
+			return -1
 		for i in range(1,len(sent1)):
 			s1 = s1 + wordvec(sent1[i])
 		for i in range(1,len(sent2)):
@@ -57,16 +64,14 @@ def wcd(sent1, sent2):
 	except KeyError:
 		return 10000
 #print(word1)
-#print(word2)
-#print(wcd(word1,word2))
 
 #Get the Relaxed Word Mover Distance
 def rwmd(sent1, sent2):
 	s1, s2 = 0, 0
 	dist1 , dist2 = 0, 0
+	# dist1 is distance to move from sent1 to sent2
 	if len(sent1) == 0 or len(sent2) == 0:
 		return 0
-	# dist1 is distance to move from sent1 to sent2
 	for i in range(len(sent1)):
 		d = numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[0]))
 		val = 0
@@ -88,6 +93,9 @@ def rwmd(sent1, sent2):
 
 	return max(dist1, dist2)			
 #print(rwmd(word2,word2))
+#print(word2)
+#print(rwMd(word1, word1))
+#print(rwmd(word1, word2))
 
 def getwcd(query, num):
 	print("running function getwcd\nquery= ")
@@ -95,38 +103,41 @@ def getwcd(query, num):
 	# closest similar num ques chahiye
 	dic={}
 	for i in range(len(ques)):
+		if(len(ques[i])==0):
+			continue
 		ques1=clean_ques(ques[i])
-		val=wcd(query,ques1)
+		val = wcd(query,ques1)
 		if(len(dic)<num):
-			dic[val]=i
+			dic[ques[i]]=val
 		else:
-			m=max(dic.keys())
-			if(m>val):
+			m=max(dic,key=dic.get)
+			if(dic[m]>val):
 				del dic[m]
-				dic[val]=ques[i]
+				dic[ques[i]]=val
 		#create a priority queue to stope the dist
 	print("loop finished")
-	return list(dic.values())
+	for i in dic:
+		print(i,dic[i])
+	return list(dic.keys())
 
 def getrwmd(query, kwcd, num):
 	print("running function getrwmd\n query= ")
 	print(query,num)
 	dic={}
 	for i in range(len(kwcd)):
-		try:
-			ques1=clean_ques(kwcd[i])
-		except AttributeError:
-			print(i,kwcd[i])
+		ques1=clean_ques(kwcd[i])
 		val=rwmd(query,ques1)
-		if(len(dic)<num):
-			dic[val]=i
+		print (kwcd[i], val)
+		if (len(dic)<num):
+			dic[kwcd[i]]=val
 		else:
-			m=max(dic.keys())
-			if(m>val):
+			m=max(dic,key=dic.get)
+			if(dic[m]>val):
 				del dic[m]
-				dic[val]=kwcd[i]
+				dic[kwcd[i]]=val
 	print("loop ended")
-	return list(dic.values())
+	return list(dic.keys())
+		#create priority queue to store the dist
 	#return top num values	
 
 def getkNN(query, num):
@@ -135,7 +146,6 @@ def getkNN(query, num):
 	print("getwcd call finished")
 	print("length of kwcd= "+str(len(kwcd)))
 	print("calling getrwmd")
-	print(kwcd)
 	knn = getrwmd(query, kwcd, num)
 	print("getrwmd call finished")
 	return knn
@@ -144,7 +154,9 @@ def getTagsSimilarQues(query):
 	print("calling getTagsSimilarQues")
 	knn = getkNN(query, 50)
 	print("getkNN call finished")
-	print(knn)
+	for i in range(len(knn)):
+		print (	knn[i])
+	#print(knn)
 	#return tags of all 50 questions returned with count of occurrence	
 def main():
 	query=input("enter the question")

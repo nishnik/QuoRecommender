@@ -18,18 +18,15 @@ def load_corpus(filename):
         data = json.load(f)    
 
     for line, value in data.items():
-        mt = re.match(r'\[(.+?)\](.+)', line)
-        if mt:
-            label = value
-            for x in label: labelmap[x] = 1
-            line = mt.group(2)
-        else:
-            label = None
+        label = value
+        for x in label: 
+            labelmap[x] = 1
         doc = re.findall(r'\w+(?:\'\w+)?',line.lower())
         if len(doc)>0:
             corpus.append(doc)
             labels.append(label)
     f.close()
+    print 'here', len(labelmap.keys())
     return labelmap.keys(), corpus, labels
 
 class LLDA:
@@ -129,7 +126,7 @@ def main():
     parser.add_option("--alpha", dest="alpha", type="float", help="parameter alpha", default=0.001)
     parser.add_option("--beta", dest="beta", type="float", help="parameter beta", default=0.001)
     parser.add_option("-k", dest="K", type="int", help="number of topics", default=20)
-    parser.add_option("-i", dest="iteration", type="int", help="iteration count", default=100)
+    parser.add_option("-i", dest="iteration", type="int", help="iteration count", default=10)
     (options, args) = parser.parse_args()
     if not options.filename: parser.error("need corpus filename(-f)")
 
@@ -146,7 +143,7 @@ def main():
     phi = llda.phi()
     for v, voca in enumerate(llda.vocas):
         #print ','.join([voca]+[str(x) for x in llda.n_z_t[:,v]])
-        print ','.join([voca]+[str(x) for x in phi[:,v]])
+        print len(phi[:,v])#print ','.join([voca]+[str(x) for x in phi[:,v]])
 
 if __name__ == "__main__":
     main()
