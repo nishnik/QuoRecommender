@@ -71,7 +71,7 @@ from time import time
 import numpy as np
 import matplotlib.pyplot as plt
 import warnings
-
+from collections import Counter
 
 from sklearn.cross_validation import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -82,10 +82,26 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.extmath import density
 from sklearn import metrics
 from sklearn.preprocessing import MultiLabelBinarizer
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
+stemmer = PorterStemmer()
+tokenizer = RegexpTokenizer(r'\w+')
+stop = stopwords.words('english')
+
+cnt = Counter()
 from sklearn.externals import joblib
 
-
 # """Trim string to fit on terminal (assuming 80-column display)"""
+def clean_ques(query):
+    # here query is list of words that are present in the question
+    query = query.lower()# converted to lowercase alphabet
+    query = tokenizer.tokenize(query) # tokenized
+    query = [q for q in query if q not in stop] # removed stop words
+    query = [stemmer.stem(q) for q in query]
+    return ' '.join(query)
+
 def trim(s):
     return s if len(s) <= 80 else s[:77] + "..."
 
@@ -126,7 +142,7 @@ print("\n")
 print('=' * 80)
 
 # TODO: train and test on full corpus
-data_file = open('test8k.json')
+data_file = open('../logs/test8k.json')
 data = json.load(data_file)
 
 # TODO: experiment with different arguments of tfidfvectorizer, like tokenizer
@@ -137,20 +153,41 @@ vectorizer = TfidfVectorizer(sublinear_tf=True,
                         stop_words='english',
                         ngram_range = (1, 1))
 print("Fitting features from the corpus to a TFIDF vectorizer")
-questions = data.keys()
+# questions = data.keys()
+questions = []
+for key, value in data.items():
+    questions.append(clean_ques(key))
+
 t0 = time()
 vectorizer.fit(questions)
 duration = time() - t0
 print("done in %fs" % (duration))
 print("Saving trained vectorizer to disk")
-joblib.dump(vectorizer, 'pkl/' + str(vectorizer)[:5] + '.pkl')
+joblib.dump(vectorizer, '../dump/pkl/' + str(vectorizer)[:5] + '.pkl')
 print("")
+
+for key in data:
+    for tag in data[key]:
+        cnt[tag] += 1
+
+unique_tags = []
+
+with open("../logs/tags.txt") as top_tag_list:
+    for line in top_tag_list:
+        line = line.split('\n')[0]
+        if cnt[line] > 0:
+            unique_tags.append(line) 
+
+for key in data:
+    for tag in data[key]:
+        if tag not in unique_tags:
+            data[key].remove(tag)
 
 tags = data.values()
 mlb = MultiLabelBinarizer()
 mlb.fit(tags)
 print("Saving trained LabelBinarizer to disk")
-joblib.dump(mlb, 'pkl/' + str(mlb)[:5] + '.pkl')
+joblib.dump(mlb, '../dump/pkl/' + str(mlb)[:5] + '.pkl')
 print("")
 
 # Split corpus into training and test sets
@@ -182,8 +219,6 @@ print("n_unique_tags = %d" % len(tags))
 
 print("")
 
-
-
 # chi2 can be used to reduce the number of features to the top k most relevant
 
 # if opts.select_chi2:
@@ -214,22 +249,28 @@ def benchmark(clf):
     train_time = time() - t0
     print("training time: %0.3fs" % train_time)
     print("Saving trained model to disk")
-    joblib.dump(clf, 'pkl/' + str(clf)[:5] + '.pkl')
+    joblib.dump(clf, '../dump/pkl/' + str(clf)[:5] + '.pkl')
     print("")
 
     print('_' * 80)
     print("Predicting: ")
     t0 = time()
     pred = clf.predict(X_test)
+    # pred = clf.predict_proba(X_test)
+    # print("Results of Decision Function: ")
+    # print(decision_function(X_test))
     test_time = time() - t0
     print("prediction time:  %0.3fs" % test_time)
     print("")
 
+    print("Classifier Score: %0.5f" % clf.score(X_test, y_test))
     if opts.show_samples :
         print("_" * 80)
         print("Sample predictions 10 out of %s:" % len(questions_test))
         sample_questions = questions_test[:10]
+        print(y_test[:10])
         sample_true = mlb.inverse_transform(y_test[:10])
+        print(pred[:10])
         sample_pred = mlb.inverse_transform(pred[:10])
         for i in range(len(sample_questions)) :
             print(". " * 40)
