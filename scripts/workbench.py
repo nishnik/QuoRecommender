@@ -19,9 +19,12 @@
 # Implementation:
 #   Preprocessing with TfidfVectorizer
 #     - n_grams, stop words
+#   Saves trained classifiers to disk as .pkl
+#     - load trained classifier as clf = joblib.load('filename.pkl') in other python scripts
 #   kNN Classifier k = 10
 #   OneVsRest Classifier with LinearSVC
 #   Performance evaluation (performance, recall and f1_score)
+#   Plotting of performance measures
 #
 # NOTE:
 #   1. Currently runs on small datasets of ~8k questions
@@ -38,6 +41,7 @@
 #         - Select all labels above threshold of max score in labels for query
 #         - Priority 1 to either improve recall or succesfully implement LDA
 #   2. Test on entire corpus
+#         - Run on server
 #         - Will probably need to limit tags to top 1000 labels in traininig/testing
 #         - OR Incorporate clustering OR Both
 #         - Needs to be done only once if done correctly on 8K questions first
@@ -78,6 +82,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.extmath import density
 from sklearn import metrics
 from sklearn.preprocessing import MultiLabelBinarizer
+<<<<<<< HEAD
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -87,6 +92,10 @@ tokenizer = RegexpTokenizer(r'\w+')
 stop = stopwords.words('english')
 
 cnt = Counter()
+=======
+from sklearn.externals import joblib
+
+>>>>>>> upstream/master
 
 # """Trim string to fit on terminal (assuming 80-column display)"""
 def clean_ques(query):
@@ -157,6 +166,8 @@ t0 = time()
 vectorizer.fit(questions)
 duration = time() - t0
 print("done in %fs" % (duration))
+print("Saving trained vectorizer to disk")
+joblib.dump(vectorizer, 'pkl/' + str(vectorizer)[:5] + '.pkl')
 print("")
 
 for key in data:
@@ -179,7 +190,11 @@ for key in data:
 tags = data.values()
 mlb = MultiLabelBinarizer()
 mlb.fit(tags)
+print("Saving trained LabelBinarizer to disk")
+joblib.dump(mlb, 'pkl/' + str(mlb)[:5] + '.pkl')
+print("")
 
+# Split corpus into training and test sets
 questions_train, questions_test, tags_train, tags_test = train_test_split(questions, tags, test_size=0.2, random_state = random.randint(1, 100))
 
 print("Extracting features from the training data using the vectorizer")
@@ -237,6 +252,8 @@ def benchmark(clf):
     clf.fit(X_train, y_train)
     train_time = time() - t0
     print("training time: %0.3fs" % train_time)
+    print("Saving trained model to disk")
+    joblib.dump(clf, 'pkl/' + str(clf)[:5] + '.pkl')
     print("")
 
     print('_' * 80)

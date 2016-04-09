@@ -55,7 +55,7 @@ class LLDA:
         labelset.insert(0, "common")
         self.labelmap = dict(zip(labelset, range(len(labelset))))
         self.K = len(self.labelmap)
-
+        print (self.K)
         self.vocas = []
         self.vocas_id = dict()
         self.labels = numpy.array([self.complement_label(label) for label in labels])
@@ -142,8 +142,8 @@ def main():
 
     phi = llda.phi()
     for v, voca in enumerate(llda.vocas):
-        #print ','.join([voca]+[str(x) for x in llda.n_z_t[:,v]])
-        print len(phi[:,v])#print ','.join([voca]+[str(x) for x in phi[:,v]])
+        print (','.join([voca]+[str(x) for x in llda.n_z_t[:,v]]))
+        print (','.join([voca]+[str(x) for x in phi[:,v]]))
 
 if __name__ == "__main__":
     main()
