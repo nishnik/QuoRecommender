@@ -13,25 +13,41 @@ from sklearn.cross_validation import train_test_split
 from sklearn import metrics
 import random
 from collections import Counter
+from scipy import spatial
 
 model = gensim.models.Word2Vec.load_word2vec_format('vectors.bin', binary = True)
-with open('text.json') as data_file:
+with open('clean.json') as data_file:
 	data=json.load(data_file)# type(data)=dict
 
-ques, tags = [], []
+ques, tag = [], []
 for key, value in data.items():
 	ques.append(key)
-	tags.append(data[key])
+	tag.append(data[key])
 
-questions_train, questions_test, tags_train, tags_test = train_test_split(ques, tags, test_size=0.001, random_state = random.randint(1, 100))
+tags = []
+with open('tags.txt') as f:
+	s = f.readlines()
+	for line in s:
+		tags.append(line)
+
+questions_train, questions_test, tags_train, tags_test = train_test_split(ques, tag, test_size=0.1, random_state = random.randint(1, 100))
 print type(tags_test)
 tokenizer = RegexpTokenizer(r'\w+')
 stop = stopwords.words('english')
 dictionary = enchant.request_dict("en_US")
 #stemmer = SnowballStemmer("english")
+def rank_dic(dic):
+	m = max(dic, key = dic.get)
+	print m
+	for key, value in dic.iteritems():
+		#fix it 
+		dic[key] = 1.0 - float(dic[key]) / (m * 1.0)
+	return dic	
+
+# def getcosine(v1, v2):
+# 	return 1 - spatial.distance.cosine(v1, v2)
 
 def clean_ques(query):
-	# here query is list of words that are present in the question
 	query = query.lower()# converted to lowercase alphabet
 	query = tokenizer.tokenize(query) # tokenized
 	query = [q for q in query if q not in stop] # removed stop words
@@ -71,6 +87,38 @@ def rwmd(sent1, sent2):
 		return 0
 	for i in range(len(sent1)):
 		d = numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[0]))
+		#d = getcosine(wordvec(sent1[i]) , wordvec(sent2[0]))
+		val = 0
+		for j in range(len(sent2) - 1):
+			if (numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[j + 1])) < d): # calculating the minimum distance of sent1[i] with every sent2[j]
+				d = numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[j + 1]))
+				#d = getcosine(wordvec(sent1[i]) , wordvec(sent2[j + 1]))
+				val = j + 1
+		dist1 = dist1 + (1.0 / len(sent1)) * d	
+
+	# dist2 is distance to move from sent2 to sent1	
+	for i in range(len(sent2)):
+		d = numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[0]))
+		#d = getcosine(wordvec(sent2[i]) , wordvec(sent1[0]))
+		val = 0
+		for j in range(len(sent1) - 1):
+			if (numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[0])) < d):
+				d = numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[j + 1]))
+				#d = getcosine(wordvec(sent2[i]) , wordvec(sent1[j + 1]))
+				val = j + 1
+		dist2 = dist2 + (1.0 / len(sent2)) * d	
+
+	return max(dist1, dist2)			
+
+#Get the one sided Relaxed Word Mover Distance
+def rwmd_(sent1, sent2):
+	s1, s2 = 0, 0
+	dist1 , dist2 = 0, 0
+	# dist1 is distance to move from sent1 to sent2
+	if len(sent1) == 0 or len(sent2) == 0:
+		return 0
+	for i in range(len(sent1)):
+		d = numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[0]))
 		val = 0
 		for j in range(len(sent2) - 1):
 			if (numpy.linalg.norm(wordvec(sent1[i]) - wordvec(sent2[j + 1])) < d): # calculating the minimum distance of sent1[i] with every sent2[j]
@@ -78,17 +126,7 @@ def rwmd(sent1, sent2):
 				val = j + 1
 		dist1 = dist1 + (1.0 / len(sent1)) * d	
 
-	# dist2 is distance to move from sent2 to sent1	
-	for i in range(len(sent2)):
-		d = numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[0]))
-		val = 0
-		for j in range(len(sent1) - 1):
-			if (numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[j + 1])) < d):
-				d = numpy.linalg.norm(wordvec(sent2[i]) - wordvec(sent1[j + 1]))
-				val = j + 1
-		dist2 = dist2 + (1.0 / len(sent2)) * d	
-
-	return max(dist1, dist2)			
+	return dist1
 
 def getwcd(query, num):
 	dic={}
@@ -124,37 +162,67 @@ def getrwmd(query, kwcd, num):
 	#return top num values	
 
 def getkNN(query, num):
-	kwcd = getwcd(query, 5 * num)
+	kwcd = getwcd(query, 10 * num)
 	knn = getrwmd(query, kwcd, num)
 	return knn
 
-def getTagsSimilarQues(query, k = 5):
-
+#get the top 20 tags by question similarity
+def getTagsSimilarQues(query, k = 20):
+	query = clean_ques(query)
 	knn = getkNN(query, 50)
 	#print(knn)
 	#return tags of all 50 questions returned with count of occurrence
 	tags=[]
 	for i in knn:
 		tags.extend(data[i])
-	tag1=Counter(tags).most_common(k)
-	tag=[tag1[i][0] for i in range(len(tag1))]
-	print 'here', type(tag)
-	return tag	
+	#tag1 = Counter(tags).most_common(k)
+	dic = {}
+	for w, c in Counter(tags).most_common(k):
+		dic[w] = c
+	return dic
+	#return rank_dic(dic)	 
+
+#get the top 20 tags by tag similarity to a question
+def similar_tags(ques, num = 20):
+	dic = {}
+	for i in range(len(tags)):
+		try:
+			val=rwmd_(clean_ques(tags[i]), clean_ques(ques))
+			if (len(dic)<num):
+				dic[tags[i]]=val
+			else:
+				m = max(dic,key=dic.get)
+				if(dic[m]>val):
+					del dic[m]
+					dic[tags[i]]=val
+		except KeyError:
+			pass							
+	return dic
+	#return rank_dic(dic)
 
 pred = []
 tt = []
+
+def combine_linear(dic1, dic2):
+	return dic1
+
 print len(questions_test)
 for i in range(len(questions_test)):
 	print (i + 1)
+	#q = input("Enter a Question")
 	q = clean_ques(questions_test[i])
-	pred.append(getTagsSimilarQues(q, 5))
+	dic1 = getTagsSimilarQues(q, 20)
+	dic2 = similar_tags(q, 20)
+	dic = combine_linear(dic1, dic2)
+	#pred.append(getTagsSimilarQues(q, 20))
 	tt.append(data[questions_test[i]])
-
-for i in range(len(tt)):
-	print pred[i]
-	print tt[i]
+	#print questions_test[i]
+	print (dic1)
+	#print (dic2)
+	print (data[questions_test[i]])
 	print '\n'
+
 #precision, recall, f1_score, support = metrics.precision_recall_fscore_support(tt, pred, average='micro')
-print("precision: %0.2f %%" % (precision * 100))
-print("recall: %0.2f %%" % (recall * 100))
-print("f score: %0.4f" % f1_score)
+# print("precision: %0.2f %%" % (precision * 100))
+# print("recall: %0.2f %%" % (recall * 100))
+# print("f score: %0.4f" % f1_score)
