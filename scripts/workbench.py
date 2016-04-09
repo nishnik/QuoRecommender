@@ -82,7 +82,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.extmath import density
 from sklearn import metrics
 from sklearn.preprocessing import MultiLabelBinarizer
-<<<<<<< HEAD
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -92,10 +91,7 @@ tokenizer = RegexpTokenizer(r'\w+')
 stop = stopwords.words('english')
 
 cnt = Counter()
-=======
 from sklearn.externals import joblib
-
->>>>>>> upstream/master
 
 # """Trim string to fit on terminal (assuming 80-column display)"""
 def clean_ques(query):
@@ -167,7 +163,7 @@ vectorizer.fit(questions)
 duration = time() - t0
 print("done in %fs" % (duration))
 print("Saving trained vectorizer to disk")
-joblib.dump(vectorizer, 'pkl/' + str(vectorizer)[:5] + '.pkl')
+joblib.dump(vectorizer, '../dump/pkl/' + str(vectorizer)[:5] + '.pkl')
 print("")
 
 for key in data:
@@ -191,7 +187,7 @@ tags = data.values()
 mlb = MultiLabelBinarizer()
 mlb.fit(tags)
 print("Saving trained LabelBinarizer to disk")
-joblib.dump(mlb, 'pkl/' + str(mlb)[:5] + '.pkl')
+joblib.dump(mlb, '../dump/pkl/' + str(mlb)[:5] + '.pkl')
 print("")
 
 # Split corpus into training and test sets
@@ -253,7 +249,7 @@ def benchmark(clf):
     train_time = time() - t0
     print("training time: %0.3fs" % train_time)
     print("Saving trained model to disk")
-    joblib.dump(clf, 'pkl/' + str(clf)[:5] + '.pkl')
+    joblib.dump(clf, '../dump/pkl/' + str(clf)[:5] + '.pkl')
     print("")
 
     print('_' * 80)
