@@ -11,8 +11,8 @@ import sys
 import json, gensim, logging
 
 
-model = gensim.models.Word2Vec.load('vectors.bin', True)
-with open('text.json') as data_file:
+model = gensim.models.Word2Vec.load('/home/adarsh/wordmodel')
+with open('clean.json') as data_file:
 	data=json.load(data_file)# type(data)=dict
 ques=list(data.keys())
 # for i in data:
@@ -52,7 +52,7 @@ def wcd(sent1, sent2):
 			s1 = wordvec(sent1[0])
 			s2 = wordvec(sent2[0])
 		else:
-			return -1
+			return 10000
 		for i in range(1,len(sent1)):
 			s1 = s1 + wordvec(sent1[i])
 		for i in range(1,len(sent2)):
@@ -116,8 +116,6 @@ def getwcd(query, num):
 				dic[ques[i]]=val
 		#create a priority queue to stope the dist
 	print("loop finished")
-	for i in dic:
-		print(i,dic[i])
 	return list(dic.keys())
 
 def getrwmd(query, kwcd, num):
