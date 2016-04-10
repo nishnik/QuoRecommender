@@ -16,7 +16,7 @@ from scipy import spatial
 print ("started")
 
 # type(data)=dict
-with open('xaa') as data_file:
+with open('cleannew.json') as data_file:
     data=json.load(data_file)
 
 #model = gensim.models.Word2Vec.load_word2vec_format('vectors.bin', binary = True)
@@ -305,8 +305,14 @@ def clean_ques_not_stop(query):
     query = tokenizer.tokenize(query) # tokenized
     return query
 
-# with open('x_ques.json') as data_file:
-#     x_ques = json.load(data_file)
+def clean_ques_not_stop(query):
+    # here query is list of words that are present in the question
+    query = query.lower()# converted to lowercase alphabet
+    query = tokenizer.tokenize(query) # tokenized
+    return query
+
+with open('x_ques.json') as data_file:
+    x_ques = json.load(data_file)
 
 def x_tag(i):
     try:
@@ -325,8 +331,6 @@ def x_tag(i):
             if (n>0.8 and n>dist):
                 dist = n
                 meta_data[i] = q
-        # print ("chk1")
-        # print (q)
         if i in meta_data:
             topic_deep = {}
             #print (meta_data[i])
@@ -337,7 +341,6 @@ def x_tag(i):
                 c = chk_in_model(a)
                 topic_new_clean[j] = c
             dist = -1
-            # print ("chk2")
             for j in topic_new_clean:
                 try:
                     if (len(topic_new_clean[j]) == 0):
@@ -358,6 +361,7 @@ def x_tag(i):
         return to_ret
     except:
         print (sys.exc_info()[0])
+
 with open('hierarchy.json') as data_file:
     hierarchy = json.load(data_file)
 
@@ -439,8 +443,8 @@ precision = 0.0
 for i in range(len(questions_test)):
     try:
         print (i + 1)
-        #q = input("Enter a Question")
-        q = questions_test[i]
+        q = input("Enter a Question")
+        # q = questions_test[i]
         dic1 = getTagsSimilarQues(q, 20)
         dic2 = similar_tags(q, 20)
         dic = combine_linear(dic1, dic2, 0.6, 0.4)
@@ -449,23 +453,23 @@ for i in range(len(questions_test)):
         lis = lis[:10]
         a = recall_calculate(tt, lis)
         total_rec = total_rec + a
-        
-        #precision_calculate(tt, lis)
-        # print (q)
-        # for a in x_tag(q):
-        #     lis.append(a)
-        #     print (a)
-        print (q)
-        for a in x_tag(q):
-            if a.lower() not in lis:
-                lis.append(a)
-                # print (a)
-        for a in hie_tag(q):
-            if a.lower() not in lis:
-                lis.append(a)
-                # print (a)
+        try:
+            for a in x_tag(q):
+                if a.lower() not in lis:
+                    lis.append(a)
+        except:
+            pass
+        try:    
+            for a in hie_tag(q):
+                if a.lower() not in lis:
+                    lis.append(a)
+                    # print (a)
+        except:
+            pass
         to_write = a, tt, lis
         recall_10[questions_test[i]] = to_write
+        print (q)
+        print (lis)
     except:
         print (sys.exc_info()[0])
         pass

@@ -1,0 +1,43 @@
+When developing locally, in order to get some test data, do you manually dump data from the remote server or is there a better way to do this?
+
+	Clus got:  User-Interfaces 
+
+	clus_deep_topic:  Web User Interfaces 
+
+
+What books would you recommend for longitudinal analysis and observational study?
+
+	Clus got:  Scientific-Research 
+
+	clus_deep_topic:  Mathematical Research 
+
+Is a single, custodial parent likely to sustain a home loan after the kids turn 18, and she no longer has access to government assistance or child support, forcing her to survive on low wage service sector wages alone?
+	
+	Clus got:  Investing 
+
+	clus_deep_topic:  Investment Funds 
+
+What are some companies similar to Palantir Technologies?
+	
+	Clus got:  Business-Models 
+
+	clus_deep_topic:  Startup Business Models 
+
+Which Silicon Valley startups have the most monthly active users?
+
+	Clus got:  Silicon Valley 
+
+	clus_deep_topic:  Business in Silicon Valley 
+
+What are the all time best romantic movies of Indian cinema ?
+
+	Clus got:  Movies 
+
+	clus_deep_topic:  Cinematography and Film 
+
+Which Python framework is the most newb friendly for creating desktop apps?
+	
+	Clus got:  User-Interfaces 
+
+	clus_deep_topic:  Graphical User Interfaces (GUI) 
+
