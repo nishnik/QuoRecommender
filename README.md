@@ -11,6 +11,12 @@
 
 [Link](https://docs.google.com/presentation/d/1yxvVrcYn_pQmB_P3--bfpeCE2AYV-JNGhtbFHOuLxX8/edit?usp=sharing) to presentation.  
 
+##Packages Required
+- nltk
+- gensim
+- ubuntu 
+- numpy
+
 **Members:**
 - [Abhinav Jain](https://www.github.com/abhinavjain241) 
 - [Adarsh Pandey](https://github.com/pandeyadarsh)
