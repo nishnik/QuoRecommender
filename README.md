@@ -14,7 +14,7 @@
 **Members:**
 - [Abhinav Jain](https://www.github.com/abhinavjain241) 
 - [Adarsh Pandey](https://github.com/pandeyadarsh)
-- [Arnav Jain](https://github.com/arnavkj1995)
+- [Arnav Jain](https://github.com/arnavkj1995) (Group Leader)
 - [Divyansh Gupta](https://github.com/guptadivyansh)
 - [Nishant Nikhil](https://github.com/nishnik/)
 - [Shubham Agrawal](https://github.com/shubham0473)
