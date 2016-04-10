@@ -15,8 +15,8 @@ import random
 from collections import Counter
 from scipy import spatial
 
-model = gensim.models.Word2Vec.load_word2vec_format('vectors.bin', binary = True)
-with open('xaa') as data_file:
+model = gensim.models.Word2Vec.load_word2vec_format('../data/vectors.bin', binary = True)
+with open('../data/xaa') as data_file:
     data=json.load(data_file)# type(data)=dict
 
 ques, tag = [], []
@@ -25,7 +25,7 @@ for key, value in data.items():
     tag.append(data[key])
 
 tags = []
-with open('out') as f:
+with open('../data/out') as f:
     s = f.readlines()
     for line in s:
         tags.append(line)
@@ -253,7 +253,7 @@ for i in range(len(questions_test)):
 
 print ("Total recall = ", float(total_rec/(1.0 * len(questions_test))))
 
-with open('recall.json','w') as outfile:
+with open('../data/recall.json','w') as outfile:
     json.dump(recall_10, outfile, indent=2, separators=(',', ': '))
 
 #precision, recall, f1_score, support = metrics.precision_recall_fscore_support(tt, pred, average='micro')

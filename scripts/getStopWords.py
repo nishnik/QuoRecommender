@@ -28,7 +28,7 @@ def clean_ques(ques):
 	ques = [stemmer.stem(q) for q in ques]
 	return ques
 
-with open('tags.json') as data_file:    
+with open('../data/clean.json') as data_file:    
     data = json.load(data_file)
 
 for key in data:
@@ -39,4 +39,4 @@ for ques in questions:
 	for word in vocab:
 		vocabQuesCount[word] += 1
 
-print(vocabQuesCount.most_common(10))
+print(vocabQuesCount.most_common(200))

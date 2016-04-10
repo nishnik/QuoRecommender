@@ -142,7 +142,7 @@ print("\n")
 print('=' * 80)
 
 # TODO: train and test on full corpus
-data_file = open('../logs/test8k.json')
+data_file = open('../data/clean_new_split.json')
 data = json.load(data_file)
 
 # TODO: experiment with different arguments of tfidfvectorizer, like tokenizer
@@ -166,22 +166,22 @@ print("Saving trained vectorizer to disk")
 joblib.dump(vectorizer, '../dump/pkl/' + str(vectorizer)[:5] + '.pkl')
 print("")
 
-for key in data:
-    for tag in data[key]:
-        cnt[tag] += 1
+# for key in data:
+#     for tag in data[key]:
+#         cnt[tag] += 1
 
-unique_tags = []
+# unique_tags = []
 
-with open("../logs/tags.txt") as top_tag_list:
-    for line in top_tag_list:
-        line = line.split('\n')[0]
-        if cnt[line] > 0:
-            unique_tags.append(line) 
+# with open("../logs/tags.txt") as top_tag_list:
+#     for line in top_tag_list:
+#         line = line.split('\n')[0]
+#         if cnt[line] > 0:
+#             unique_tags.append(line) 
 
-for key in data:
-    for tag in data[key]:
-        if tag not in unique_tags:
-            data[key].remove(tag)
+# for key in data:
+#     for tag in data[key]:
+#         if tag not in unique_tags:
+#             data[key].remove(tag)
 
 tags = data.values()
 mlb = MultiLabelBinarizer()

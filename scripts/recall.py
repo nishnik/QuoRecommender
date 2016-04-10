@@ -16,11 +16,11 @@ from scipy import spatial
 print ("started")
 
 # type(data)=dict
-with open('xaa') as data_file:
+with open('../data/xaa') as data_file:
     data=json.load(data_file)
 
 #model = gensim.models.Word2Vec.load_word2vec_format('vectors.bin', binary = True)
-model = gensim.models.Word2Vec.load_word2vec_format('vec.txt', binary = False)
+model = gensim.models.Word2Vec.load_word2vec_format('../data/vec.txt', binary = False)
 print ("model loaded")
 
 ques, tag = [], []
@@ -29,7 +29,7 @@ for key, value in data.items():
     tag.append(data[key])
 
 tags = []
-with open('tags.txt') as f:
+with open('../data/tags.txt') as f:
     s = f.readlines()
     for line in s:
         tags.append(line)
@@ -358,7 +358,7 @@ def x_tag(i):
         return to_ret
     except:
         print (sys.exc_info()[0])
-with open('hierarchy.json') as data_file:
+with open('../data/hierarchy.json') as data_file:
     hierarchy = json.load(data_file)
 
 
@@ -473,7 +473,7 @@ for i in range(len(questions_test)):
 print ("Total recall = ", float(total_rec/(1.0 * len(questions_test))))
 #print ("Precision = ", float(precision/(1.0 * len(questions_test))))
 
-with open('recall.json','w') as outfile:
+with open('../data/recall.json','w') as outfile:
     json.dump(recall_10, outfile, indent=2, separators=(',', ': '))
 
 #precision, recall, f1_score, support = metrics.precision_recall_fscore_support(tt, pred, average='micro')

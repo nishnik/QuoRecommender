@@ -23,7 +23,7 @@ def clean_ques(query):
 	query = tokenizer.tokenize(query) # tokenized
 	return ' '.join(query)
 
-with open('clean.json') as data_file:
+with open('../data/clean.json') as data_file:
 	data = json.load(data_file)# type(data)=dict
 
 for line, value in data.items():
@@ -35,6 +35,6 @@ tags = []
 for i, j in tag_count.most_common():
 	tags.append(i)
 
-with open('total_tags.txt', 'w') as w:
+with open('../data/total_tags.txt', 'w') as w:
 	for i in range(len(tags)):
 		w.write(clean_ques(tags[i]))	
