@@ -334,6 +334,81 @@ def x_tag(i):
     except:
         print (sys.exc_info()[0])
 
+with open('hierarchy.json') as data_file:
+    hierarchy = json.load(data_file)
+
+
+topics = hierarchy.keys()
+
+topic_clean = {}
+
+for j in topics:
+    c = clean_ques(j)
+    topic_clean[j] = c
+
+
+def hie_tag(i):
+    to_ret = []
+    clus_topic = {}
+    d = clean_ques(i)
+    if len(d) == 0:
+        return to_ret
+    dist = -1
+    for j in topic_clean:
+        try:
+            if (len(topic_clean[j]) == 0):
+                continue
+            n = model.n_similarity(topic_clean[j], d)
+        except:
+            # print ("outer loop",sys.exc_info()[0])
+            continue
+        # print (n)
+        n = abs(n)
+        if (n > dist and n > 0.6):
+            dist = n
+            clus_topic[i] = j
+    # print ("chk")
+    clus_deep_topic = {}
+    try:
+        if (i in clus_topic):
+            # print ("Clus got: ", clus_topic[i], "\n")
+            new_topics = hierarchy[clus_topic[i]]
+            topic_new_clean = {}
+            for j in new_topics:
+                c = clean_ques(j)
+                to_app = []
+                to_chk = clean_ques(clus_topic[i])
+                for a in c:
+                    if a not in to_chk:
+                        to_app.append(a)
+                topic_new_clean[j] = to_app
+                topic_new_clean[j] = c
+            dist = -1
+            for j in topic_new_clean:
+                try:
+                    if (len(topic_new_clean[j]) == 0):
+                        continue
+                    n = model.n_similarity(topic_new_clean[j], d)
+                except:
+                    # print ("outer loop",sys.exc_info()[0])
+                    continue
+                # print (n)
+                n = abs(n)
+                if (n > dist and n > 0.68):
+                    dist = n
+                    clus_deep_topic[i] = j
+            # if (i in clus_deep_topic):
+            #     print ("clus_deep_topic: ", clus_deep_topic[i], "\n")
+    except:
+        print ("load", sys.exc_info()[0])
+        pass
+    if i in clus_topic:
+        to_ret.append(clus_topic[i])
+        if i in clus_deep_topic:
+            to_ret.append(clus_deep_topic[i])
+    return to_ret
+
+
 recall_10 = {}
 total_rec = 0.0
 for i in range(len(questions_test)):
@@ -353,8 +428,13 @@ for i in range(len(questions_test)):
         recall_10[questions_test[i]] = to_write
         print (q)
         for a in x_tag(q):
-            lis.append(a)
-            print (a)
+            if a.lower() not in lis:
+                lis.append(a)
+                print (a)
+        for a in hie_tag(q):
+            if a.lower() not in lis:
+                lis.append(a)
+                print (a)
     except:
         print (sys.exc_info()[0])
         pass
