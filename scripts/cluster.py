@@ -1,5 +1,5 @@
 labels = []
-with open("xaa") as f:
+with open("../data/xaa") as f:
     data = json.load(f)    
 
 for line, value in data.items():

@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 dic = {}
 count = 0
 
-PATH = "../logs/"
+PATH = "../data/logs/"
 for i in os.listdir(PATH):
 	filename = PATH + i
 	soup = BeautifulSoup(open(filename))

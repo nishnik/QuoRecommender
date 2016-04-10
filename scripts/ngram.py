@@ -21,7 +21,7 @@ def clean_ques(ques):
 	return ques
 
 abc = []
-with open('clean.json') as data_file:    
+with open('../data/clean.json') as data_file:    
     data = json.load(data_file)
 
 ques = list(data.keys())

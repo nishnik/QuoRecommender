@@ -9,6 +9,7 @@
 
 #### TITLE : Recommending topics for a question in Quora
 
+[Link](https://docs.google.com/presentation/d/1yxvVrcYn_pQmB_P3--bfpeCE2AYV-JNGhtbFHOuLxX8/edit?usp=sharing) to presentation.  
 
 **Members:**
 - [Abhinav Jain](https://www.github.com/abhinavjain241) 
