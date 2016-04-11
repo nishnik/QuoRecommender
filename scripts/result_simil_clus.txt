@@ -1,0 +1,808 @@
+# This is the result you get from taking the nearest match of the whole question based on cosine similarity in the word2vec model (denoted by Simil Got)
+# CLus got the denotes the nearest topic from the first level of hierarchy.json
+
+Where can I find the latest news about startups in SV?
+['Silicon Valley']
+Simil got:  web 
+
+How do you add songs to external hard drive?
+['Microsoft Windows', 'Hard Disk Drives (HDD)', 'iTunes', 'Apple (company)', 'External Hard Drives', 'Backups']
+Simil got:  you 
+
+Have you ever seen an animated GIF that made you cry? If so, what was it?
+['Animated GIFs', 'Crying', 'Photography', 'Memes', 'Funny Pictures']
+Clus got:  Movies 
+
+Simil got:  even 
+
+What is the easiest way to install NumPy in a virtual environment?
+['virtualenv', 'NumPy', 'Python (programming language)']
+Simil got:  easier 
+
+What us the average CTR of the links shared on facebook ads?
+['Click-Through Rates', 'Facebook Ads']
+Clus got:  Facebook 
+
+Simil got:  web 
+
+What would be consumer centric features for a ecommerce platform?
+['E-Commerce', 'Zappos', 'E-Commerce Startups and Companies', 'Startup Advice and Strategy', 'Consumer Technology']
+Clus got:  Web Design 
+
+Simil got:  platforms 
+
+What are you most obsessed about?
+['Obsessive-Compulsive Disorder', 'Psychology', 'Human Behavior', 'Obsession']
+Simil got:  obsession 
+
+What is the one change, just one change that can fix the chaos called Indian Road Traffic?
+['India', 'Traffic']
+Clus got:  Business Strategy 
+
+Simil got:  this 
+
+How is it to work at Thermax for a mechanical engineer?
+['Sardar Vallabhbhai National Institute of Technology, Surat', 'Engineers', 'Mechanical Engineer', 'Mechanical Engineering', 'Work', 'Visvesvaraya National Institute of Technology (VNIT), Nagpur', 'Thermax']
+Clus got:  Software Engineering 
+
+Simil got:  engineering 
+
+Should I keep working as a product manager for a company which has an exit strategy to be sold by end of the year?
+['Career Advice', 'Venture Capital', 'Product Managers', 'Startups', 'Startup Advice and Strategy', 'Product Management', 'Jobs']
+Clus got:  Business Strategy 
+
+Simil got:  now 
+
+Why doesn't video work well in Quora's iOS app?
+['iOS', 'Applications', 'Quora User Feedback']
+Simil got:  iphone 
+
+What is the best way to end Religious Tyranny in Muslim countries?
+['Religious Tolerance', 'Religion', 'Tyranny', 'Politics', 'Oppression', 'Muslim Countries', 'Religious Oppression']
+Simil got:  all 
+
+How does a dual national renounce himself of spanish citizenship?
+['Dual Citizenship', 'Citizenship']
+Simil got:  nationality 
+
+What makes some people think that the entire world is against them and why?
+['Society', 'Social Psychology']
+Clus got:  Life 
+
+Simil got:  what 
+
+Should President Obama be doing more to stop Iran from getting the bomb?
+['Barack Obama', 'Politics', '2012 U.S. Presidential Election', 'U.S. Politics (renamed) (renamed)', 'Iranian Nuclear Threat & Potential Israeli Attack', 'Iran', '2012 Democratic Convention']
+Clus got:  Barack Obama 
+
+Simil got:  bush 
+
+What are your ideas for getting the uninsurable insured when the Affordable Care Act is scrapped?
+['COBRA (health insurance plan)', 'Medicine and Healthcare', 'Healthcare Reform', 'Health Insurance Portability and Accountability Act (HIPAA)', 'Questions That Contain Assumptions', 'Obamacare Rollout & Struggles (2013-14)']
+Simil got:  insurance 
+
+Which anime's I might like if my favorites were the following types?
+['Anime']
+Simil got:  other 
+
+Who is the best real estate agent in Palo Alto?
+['Palo Alto CA', 'Palo Alto CA old', 'Palo Alto CA old3']
+By distance, what's the longest New York subway line?
+['New York City', 'Statistics (academic discipline)', 'NYC Subway']
+Simil got:  lines 
+
+Does palantir test coding in a business development interview? If yes, on the phone screen, in office, or both?
+['Palantir Technologies', 'Job Interview Questions', 'Business Development', 'Job Interviews']
+Clus got:  Business Strategy 
+
+Simil got:  same 
+
+Would people like SteveJobs and Billgates would have been successful and rich person as now if he had born and brought up in India ?
+['Steve Jobs', 'Wealthy People and Families', 'India']
+How are the skins and sounds in animated movies, made so realistic?
+['Animated Movies', 'Movies', 'Animation']
+Clus got:  Movies 
+
+Simil got:  movie 
+
+Will The Bachelor have a happy ending this season?
+['The Bachelor (TV series)', 'Reality Television']
+Simil got:  end 
+
+What are some songs that instantly boost your mood?
+['Music']
+Are there animals that can control the mind of other animals with no direct contact?
+['Biology', 'Control', 'Animals', 'Evolutionary Biology', 'The Mind']
+Clus got:  Human Behavior 
+
+Simil got:  animal 
+
+If you are on a strict diet and are very fit, then one day you cheat for the first time in like 7 months and have 3 donuts will you get fat because of it?
+['Health', 'Weight Loss', 'Nutrition', 'Exercise', 'Fitness', 'Diets']
+Simil got:  just 
+
+Does AirBnB take any measures to prevent users from transacting outside of the site?
+['Airbnb']
+Simil got:  allow 
+
+Do you have ideas for a present to an hiring manager, that helped me to find a job in another company?
+['Life', 'Job Search', 'Hiring', 'Ideas']
+Clus got:  Business Strategy 
+
+Simil got:  what 
+
+Can you add all of your twitter followers to one list all at once?
+['Twitter']
+Clus got:  Facebook 
+
+Simil got:  only 
+
+Have mental health professionals carried out research on the social effects that violent video games play?
+['Health', 'Mental Health', 'Psychology']
+Clus got:  Social Media Marketing 
+
+Simil got:  well 
+
+What are some good resources for learning about Dynamic Time Warping?
+['Time Series', 'Educational Resources', 'Machine Learning', 'Statistics (academic discipline)']
+Clus got:  User Experience 
+
+Simil got:  better 
+
+What are the best practices of Inside Sales in a B2B oraganization?
+['Inside Sales', 'Business-to-Business']
+When will mortgage interest rates go up in the UK?
+['London', 'Real Estate', 'Mortgages', 'United Kingdom', 'Housing', 'Interest Rates']
+Clus got:  Higher Education 
+
+Simil got:  rate 
+
+Why doesn't Facebook.com fix its bug of logout button ?
+['Computer Programming', 'Computer Science', 'Facebook Platform', 'Facebook (product)', 'Facebook Logout', 'Facebook Bugs']
+Psychoacoustics: Is there a correlation between personality types and the keys of songs those types prefer?
+['Questions That Contain Assumptions', 'Myers-Briggs Type Indicator', 'Music', 'Psychology']
+Simil got:  different 
+
+What is the best way to spend a week in Montreal?
+['Travel', 'Montréal, QC, Canada', 'Canada', 'Québec', 'What Should I Do When I Travel to X?']
+Simil got:  time 
+
+Is it possible to control throw of a dice?
+['Dice and Dice games', 'Control', 'Probability (statistics)', 'Dice']
+Simil got:  could 
+
+What do you wish classical music had more of?
+['Classical Musicians and Composers', 'Music Appreciation', 'Contemporary Classical Music', 'Classical Music', 'Music']
+Clus got:  Music 
+
+Simil got:  musical 
+
+How can I delete all my comments on a question?
+['Quora (product)', 'Comments (Quora feature)', 'Deletion (Quora feature)']
+Simil got:  questions 
+
+What's the simplest way to transfer all data from one iPod to another?
+['Apple (company)']
+Clus got:  User Experience 
+
+Simil got:  this 
+
+Can you get a method patent on something you haven't made?
+['Patent Law', 'Patents']
+Clus got:  Money 
+
+Simil got:  so 
+
+How did the Rolling Stones influence rock stylistically?
+['Rock Music', 'The Rolling Stones (band)']
+Clus got:  Rock Music 
+
+Simil got:  stone 
+
+What is the best Android phone as of Q1 2013?
+['Mobile Phones', 'Android (OS)', 'Android Phones']
+Simil got:  2009 
+
+Is it OK to answer a question on Quora with lmgtfy?
+['Quora Answer Policies and Guidelines', 'LMGTFY (website)', 'Quora Policies and Guidelines', 'Quora (product)', 'Answers (Quora content)']
+Should a girl tell her boyfriend that she was an exotic dancer for three days?
+['Dating Advice', 'Girls and Young Women', 'Boyfriends', 'Love', 'Dating and Relationships', 'Exotic Dancer']
+Clus got:  How I Met Your Mother 
+
+Simil got:  couple 
+
+What sites could help graphic designers to improve the design skills?
+['Design', 'Designers', 'Graphic Design']
+Clus got:  Web Design 
+
+Simil got:  better 
+
+What is the best advice your dad has given you?
+['Life', 'Parents', 'Advice', 'Philosophy', 'Life Advice', 'Emotions']
+Clus got:  Social Advice 
+
+Simil got:  good 
+
+I really want to work in numerous fields. How can I decide what I want to work in?
+['Life', 'Finance', 'Job Search', 'Life Advice', 'Decision Making', 'Jobs', 'Entrepreneurship', 'Careers', 'Career Advice']
+Clus got:  Business Strategy 
+
+Simil got:  n't 
+
+How will ships travelling at close to the speed of light be protected from micro meteorite impacts?
+['Speed of Light', 'Relativity (physics)', 'Astronomy', 'Special Relativity', 'Physics', 'Meteorites']
+Simil got:  impact 
+
+What would it be like if the modern world were similar to Medieval Europe?
+['Middle Ages', 'World History', 'History']
+Clus got:  History 
+
+Simil got:  even 
+
+Why do England perform poorly in World cup?Will it change this year?
+['Football (Soccer)', 'England']
+Simil got:  well 
+
+What is the best way to get out of a fast moving car to minimise injury?
+['Physics', 'Cars and Automobiles', 'Human Body']
+Simil got:  so 
+
+What are some good ways for bright kids 5 to 8 years old to learn Mandarin that does not require a lot of expense or parental time?
+['K-12 Education', 'Second-Language Learning', 'Mandarin Chinese (language)']
+Clus got:  Life 
+
+Simil got:  so 
+
+What are some ways the Buffalo Bills have blown the draft since 2000?
+['Why Did X Fail?', 'National Football League (NFL)', 'Disasters', 'NFL Draft', 'Football (US)', 'Buffalo Bills', 'Epic Fails', 'Sports']
+Simil got:  last 
+
+Do you think there is or will be chemistry between Peter Quinn and Carrie in TV series homeland ?
+['TV', 'Television Series', 'Television', 'Homeland (TV series)']
+Clus got:  Television Series 
+
+Simil got:  what 
+
+What does it feel like to be a foodie?
+['Foodies', 'Food', 'What Does It Feel Like to X?', 'Travel', 'Life']
+Simil got:  really 
+
+Which user generated content websites have the best auto tagging system?
+
+['Blogging Platforms', 'User-Generated Content', 'Tagging']
+Clus got:  User Experience 
+
+Simil got:  users 
+
+What might a market segmentation of Quora users look like?
+['Quora (product)', 'Quora', 'Marketing Segmentation']
+Clus got:  User Experience 
+
+Simil got:  you 
+
+Why are the Malaysian Muslims currently so afraid of Human Rights?
+['Malaysia', 'Religion', 'Islam', 'Muslims', 'Afraid', 'The Human Race and Condition', 'Questions That Contain Assumptions', 'Southeast Asia', 'Human Rights']
+Clus got:  Human Behavior 
+
+Simil got:  people 
+
+How do websites like Yelp generate content before they reach a critical mass?
+['Yelp (website)']
+Clus got:  Social Media Marketing 
+
+Simil got:  such 
+
+I go back and forth on which is the better album, Heaven and Hell or Mob Rules... Why didn't that lineup of Black Sabbath stay together longer?
+['Sabbath', 'Heaven and Hell']
+Clus got:  Love 
+
+Simil got:  come 
+
+Why can't Facebook Pages comment on posts they have been mentioned in?
+['Online Commenting', 'Facebook Pages', 'Facebook Platform', 'Facebook (product)']
+Clus got:  Facebook 
+
+Simil got:  twitter 
+
+
+Related question: 
+Why would a user choose to use Airbnb.com instead of CouchSurfing.com?
+
+Original question: 
+Why is Airbnb considered one of the hottest startups in Silicon Valley?
+
+
+['Silicon Valley', 'Startups']
+Clus got:  Web Design 
+
+Simil got:  instance 
+
+What are some of the things that Facebook decided not to do?
+['Facebook (product)', 'Software Engineering']
+Clus got:  Facebook 
+
+Simil got:  want 
+
+What are some most popular comics read across India in the 90's?
+['Comic Books', 'Children', 'Startups', 'India', 'Indian Comics', 'Comics (narrative art form)']
+Clus got:  India 
+
+Simil got:  which 
+
+What are examples of design that successfully combine two different brands?
+['Identity Design', 'Graphic Design', 'Brand Strategy', 'Design', 'Logos', 'Brands and Branding']
+Clus got:  Product Design 
+
+Simil got:  these 
+
+How can a user prevent the XP Security tools  computer infection?
+['Windows XP']
+Clus got:  User Experience 
+
+Simil got:  software 
+
+What are some ideas for improving the customer experience of a local motorcycle shop?
+['Motorcycles and Motorcycling', 'Small Businesses']
+Clus got:  Business Models 
+
+Simil got:  business 
+
+what is the role of an investment bank?
+['Banking', 'Investment Banking', 'Stock Market', 'Finance']
+Clus got:  Business Strategy 
+
+Simil got:  financial 
+
+Why do so many people in the USA have guns?
+['Guns and Firearms', 'American Culture, Habits, and Behavior', 'The United States of America']
+Simil got:  some 
+
+Considering the size and scope of the preparation involved in the setpiece of the wedding in King's Landing, what little intricacies were there on set that failed to materialise on screen?
+['Movie Production', 'Television Business', 'Game of Thrones Season 4 Episode 2 (The Lion and The Rose)', 'Filmmaking', 'HBO', 'Fantasy (genre)', 'Game of Thrones (TV series)', 'Television']
+Simil got:  but 
+
+How program loads and memory address calculated and allocated?
+['Linux', 'C (programming language)', 'Memory Management (computer programming)', 'Memory (information storage)', 'Systems Programming']
+Simil got:  programs 
+
+Which are the best examples of public policies design ? and why design posture or tools helped to make the difference ?
+['Design', 'Public Policy', 'Social Innovation']
+Clus got:  Product Design 
+
+Simil got:  example 
+
+Why does Donald Trump have such bad hair?
+['Hairstyles', 'Donald Trump', 'Hair', 'Billionaires']
+How do I learn develop Android application if I don't know Java but I know algorithms?
+['Computer Programming', 'Programming Languages', 'Android (OS)', 'Software Engineering', 'Startups', 'Mobile Applications', 'Algorithms', 'Android Development', 'Android Applications', 'Java (programming language)']
+Clus got:  User Experience 
+
+Simil got:  understand 
+
+What's the most annoying thing about SQL syntax in your daily work?
+['Database Systems', 'PostgreSQL', 'Oracle', 'jOOQ', 'Relational Databases', 'MySQL', 'SQL Server', 'SQL']
+Simil got:  you 
+
+Do any members of the current US Congress know how to write code? With SOPA, PIPA and now CISPA being protested, postponed and now passed, respectively, to regulate the Internet, is there at least ONE US Congressperson who can professionally program?
+['The Internet']
+While rising money for a project (startup or company), are usually that funds also for a kind of salary of the creators or just to pay other people and everyday billing?
+['Venture Capital', 'Angel Investing', 'Investing', 'Startup Advice and Strategy']
+Clus got:  Money 
+
+Simil got:  because 
+
+Why Israel is targeting media buildings and refugee camps in Gaza?
+['Refugees', 'Israel, Gaza, and West Bank Conflict (2010 and 2011)', 'Israel-Palestine Conflict', 'Israel']
+Simil got:  palestinian 
+
+Which are the better headphones: beats by Dre solo hd or Bose AE2?
+['Headphones']
+Simil got:  stereo 
+
+How to secure a whiteboard really well in your rented apartment wall without leaving holes in the walls or destroying the paint when you leave?
+['Household Maintenance', 'Do It Yourself (DIY)']
+Clus got:  Small Businesses 
+
+Simil got:  them 
+
+What percentage of Facebook's 500 million users login everyday?
+['Facebook Statistics', 'Facebook (product)']
+Clus got:  Facebook 
+
+Simil got:  user 
+
+What are the most popular Chinese search engines?
+['Web Search', 'China']
+Clus got:  Web Design 
+
+Simil got:  engine 
+
+What are some good ways to build a team?
+['Corporate Partnerships', 'Team Building', 'Management', 'People Management']
+Clus got:  Business Strategy 
+
+Simil got:  way 
+
+Which Chinese TV series are popular with female university students?
+['Television Series', 'Chinese Culture', 'China']
+Clus got:  Television Series 
+
+Simil got:  many 
+
+Would men be happier if women were to stop wearing makeup?
+['Women', 'Bizarre Questions', 'Beauty', 'Men', 'Makeup', 'Dating and Relationships', 'Questions That Contain Assumptions']
+Simil got:  they 
+
+What is specifically studied in the emergent field of quantum chemistry?
+['Theoretical Physics', 'Chemistry', 'Quantum Mechanics']
+Clus got:  Physics 
+
+Simil got:  physics 
+
+Iranian Nuclear Threat & Potential Israeli Attack: What would a war between Iran and Israel look like?
+['Iran', 'Israel', 'Military History and Wars']
+Simil got:  could 
+
+When Dirty Harry says "Make my day" what does he mean exactly?
+['Movies', 'Clint Eastwood (actor, director)', 'Dirty Harry (1971 movie & character)']
+Clus got:  Money 
+
+Simil got:  what 
+
+What if a football match go to sudden death where one team is having only 10 players against the 11 players of the other team?
+['Football (Soccer)']
+Clus got:  National Basketball Association 
+
+Simil got:  teams 
+
+If all of your wealth disappeared right now, how would you regain it?
+['Wealth', 'Survey Questions', 'Challenges', 'Hypothetical Scenarios', 'Finance']
+Simil got:  could 
+
+Can you afford to donate to save elephants in Africa?
+['Quorans for a Cause', 'Visiting and Travel', 'Animal Rights', 'Elephants', 'Advertisement, Classified Ad or Self-Promotional Question', 'Nature Conservation', 'Culture (social science)', 'Nature', 'Wildlife', 'Animals', 'Money', 'History', 'Specific Social Networks (online)', 'Nonprofit Organizations', 'Quora (product)', 'Empathy', 'Charity and Charities', 'Africa']
+Simil got:  help 
+
+Which game on the Xbox 360 is most like Chrono Cross (Playstation)?
+['Xbox 360', 'Video Games']
+Simil got:  nintendo 
+
+what are positive sides or aspects of Indian culture?
+['Cultures of India', 'Culture (social science)', 'Positive', 'India', 'Education']
+Simil got:  both 
+
+Will the BJP  government be any better than the UPA alliance?
+['Bharatiya Janata Party', 'India']
+Simil got:  coalition 
+
+If you could teach just one thing to the youth of today, what single piece of advice would you give them?
+['Life Lessons', 'Child Development']
+Clus got:  Social Advice 
+
+Simil got:  what 
+
+What is a Playstation Mini?
+['Console', 'Video Game Consoles', 'PlayStation (video game console)']
+Simil got:  xbox 
+
+How does it feel like to be told that your smile is sarcastic?
+['Sarcasm', 'What Does It Feel Like to X?', 'Smile', 'Misunderstandings']
+Simil got:  know 
+
+What are some things that you have done or still do, time and again, making you resent about it later?
+['Business', 'Life', 'Procrastination', 'Politics', 'Jobs and Careers', 'Inspiration', 'Life Lessons', 'Journalism', 'Philosophy', 'Life Advice', 'Movies', 'Parenting', 'TV Sitcoms', 'Education', 'Motivation', 'Dating and Relationships', 'Technology', 'Sports', 'Music', 'Psychology of Everyday Life', 'Psychology']
+Clus got:  Life 
+
+Simil got:  but 
+
+What is best ways to learn to develop Quant spreadsheets?
+['Quantitative Finance', 'Spreadsheets', 'Algorithmic Trading', 'Stock Trading', 'Investment Banking']
+Simil got:  better 
+
+What are the top 10 colleges for computer science degrees?
+['Computer Science Education', 'Computer Science', 'Education', "Master's Programs", 'Engineering', 'Graduate School']
+Clus got:  Computer Science 
+
+Simil got:  universities 
+
+Which types of plastics are recyclable at Stony Brook University?
+['Stony Brook University', 'Recycling', 'Plastic']
+What is the best way to find web development jobs?
+['Jobs', 'Recruiting', 'Job Search', 'Web Development', 'Career Advice']
+Clus got:  Business Strategy 
+
+Simil got:  better 
+
+Is there something in your life you have always wanted to do but are just afraid to take the first step?
+['London', 'San Francisco', 'New York City', 'Harvard University', 'Life', 'Volleyball', 'Musicians', 'India', 'The College and University Experience', 'New Delhi Television Limited (NDTV)', 'Education', 'Tips and Hacks for Everyday Life', 'Social Psychology']
+Clus got:  Life 
+
+Simil got:  n't 
+
+How do you get vegetables into children?
+['Diets', 'Food', 'Medicine and Healthcare']
+Clus got:  Food 
+
+Simil got:  kids 
+
+How did people who transitioned to the digital nomad lifestyle overcome the desire to own stuff?
+['Lifestyle', 'Lifestyle Design', 'Digital Nomads']
+Simil got:  kind 
+
+Is it possible to paste a quora.com url into an RSS reader and view a stream of the latest open questions?
+['RSS Readers', 'Quora User FAQs', 'RSS Feeds (Quora feature)', 'RSS (Really Simple Syndication)']
+Clus got:  Web Design 
+
+Simil got:  web 
+
+Is the Hill Station (in Honolulu) a good measure of the temperatures on the University of Hawaii campus? (as in, is it usually ~8 degrees cooler than downtown Honolulu)?
+['Weather']
+Simil got:  where 
+
+Who are the most successful stock traders in the US in 2014?
+['Hedge Funds', 'Stock Market', 'Finance', 'Trading (finance)', 'Stocks (financial)']
+Clus got:  Business Strategy 
+
+Simil got:  market 
+
+Are organizations such as the UN, World Bank, and the Bill and Melinda Gates Foundation really trying to fix global issues?
+['Corruption', 'Politics', 'World Bank', 'Poverty', 'The Human Race and Condition', 'Political Corruption', 'Social Entrepreneurship', 'Humanitarian Aid']
+Clus got:  Business Strategy 
+
+Simil got:  need 
+
+What are the websites available in India for connecting all the entities (Student, Parent, Teacher,Admin) in SCHOOL?
+['Social Media', 'India', 'Technology in Education', 'Education Startups', 'Education', 'In School']
+Clus got:  Education 
+
+Simil got:  students 
+
+What can be done  in order to get rid of the term Bollywood to mean Hindi movie industry?
+['Bollywood', 'Movies', 'Bollywood Music', 'Cinema of India', 'Hindi (language)']
+Clus got:  Movies 
+
+Simil got:  even 
+
+What are some dark stories about Barack Obama?
+['Barack Obama']
+Clus got:  Barack Obama 
+
+Simil got:  bush 
+
+What are some good resources for learning about Hidden Markov Models?
+['Bayesian Networks', 'Natural Language Processing', 'Image Recognition', 'Computer Science', 'Natural Language Toolkit (NLTK)', 'Mixture Models']
+Clus got:  Business Models 
+
+Simil got:  better 
+
+Which megacity offers the best quality of life?
+['Neighborhoods', 'Quality of Life', 'Megalopolis', 'Megacities']
+Clus got:  Life 
+
+Simil got:  good 
+
+What is the best way to prepare for campus placements for core branch students in IITs to get a reputed MNC?
+['Indian Institute of Technology, Guwahati (IITG)', 'IIT Placements & Internships', 'Indian Institute of Technology, Bombay (IITB)', 'Indian Institute of Technology, Delhi (IITD)', 'Indian Institutes of Technology (IITs)', 'Indian Institute of Technology, Kanpur (IITK)', 'Campus Placements', 'Career Advice']
+Clus got:  Higher Education 
+
+Simil got:  well 
+
+What is so good about the Dollars trilogy?
+['Movie Story and Plot Themes', 'The Good, The Bad and the Ugly (1966 movie)', 'Clint Eastwood (actor, director)', 'Spaghetti Westerns', 'Movie Critics and Criticism', 'Movies', 'Sergio Leone']
+Simil got:  worth 
+
+What does it mean to be 'the life of a party'?
+['Phrase Definitions', 'Meaning', 'Etymology', 'Personality', 'Phrases']
+Clus got:  Life 
+
+Simil got:  even 
+
+Mumbai, Maharastra, India: I live alone in Mumbai. What are a few things I can do on the weekends to keep me busy and have fun?
+['Mumbai, Maharashtra, India', 'Weekends', 'Hobbies', 'Meeting New People', 'Survey Questions']
+Clus got:  India 
+
+Simil got:  going 
+
+What is the best way to view and share the multiple videos at once?
+['YouTube Videos']
+Clus got:  User Experience 
+
+Simil got:  well 
+
+I am 35 and i haven't achieved much in life. Is it too late?
+['Life', 'Being Boring', 'Life Lessons', 'Life Advice', 'Sex', 'Am I Too Old To Do X?', 'Love', 'Careers', 'China']
+Clus got:  Life 
+
+Simil got:  years 
+
+Why do people feel that Jesus came to do away with the laws and they no longer have to keep the Sabbath?
+['Religion']
+Clus got:  Life 
+
+Simil got:  come 
+
+What is the career path to becoming an international cricket umpire?
+['Cricket (sport)', 'Umpiring', 'Cricket Umpires', 'Cricket in England', 'Cricket Australia (administrative body)', 'Cricket in India']
+Simil got:  he 
+
+For the last two girls I've been with, the relationships started great but after a while, they told me that I'm a very good friend (care for them, be there when they need...) rather than a boyfriend. What should I do?
+['Dating and Relationships']
+Clus got:  How I Met Your Mother 
+
+Simil got:  so 
+
+Atheists and agnostics, what was your "Road to Damascus" moment?
+['Religion', 'Atheism', 'Agnosticism', 'Conversion (marketing)']
+What are the best questions to ask customers about a new site design?
+['User Feedback', 'Web Applications', 'Customer Feedback', 'User Experience']
+Clus got:  Web Design 
+
+Simil got:  what 
+
+What is it like to be the child of an International Science Olympiad contestant?
+['International Olympiad in Informatics (IOI)', 'International Physics Olympiad (IPhO)', 'International Mathematical Olympiad (IMO)', 'Parent Expectations', 'International Chemistry Olympiad (IChO)', 'Science Olympiad']
+Clus got:  Computer Science 
+
+Simil got:  one 
+
+Why do Indian parents give ultimatums?
+['Dating and Relationships', 'Parenting', 'India', 'Marriage']
+Simil got:  take 
+
+How can one validate the given input of a JSP form?
+['Java (programming language)', 'Java Platform, Enterprise Edition', 'Web Development']
+Clus got:  User Experience 
+
+Simil got:  only 
+
+What it is like to have a serious relationship with someone who cheated in the past?
+['Dating and Relationships', 'What Does It Feel Like to X?', 'Cheating (relationship and marital infidelity)']
+Clus got:  Life 
+
+Simil got:  even 
+
+What is the process in which a PhD application is reviewed (in the US)? I have mentioned a few names under whom I would like to work. Will they be intimated by the graduate admissions board? Or does this vary amongst departments and universities?
+['Graduate School Admissions', 'Graduate School']
+Clus got:  Higher Education 
+
+Simil got:  well 
+
+What is the largest country in the world?
+['Countries', 'Geography']
+Simil got:  nation 
+
+what is the future of IT industry in India in the next 5 years?
+['The Future', 'India', 'Career Advice']
+Clus got:  India 
+
+Simil got:  year 
+
+What is the best way to monetize a Facebook page?
+['Facebook Pages', 'Monetization', 'Facebook Monetization']
+Clus got:  Facebook 
+
+Simil got:  web 
+
+If your using an event driven server, does it make sense to have a traditional web server for certain more static tasks?
+['Software Engineering', 'Startups', 'Node.js', 'Static', 'Event-Driven Architecture', 'Web Servers', 'Web Development']
+Clus got:  User Experience 
+
+Simil got:  rather 
+
+How do people with IQs of 70 to 140 think?
+['Intelligence']
+Simil got:  80 
+
+Where can I get free books about computer science or programming?
+['Computer Programming', 'Book Recommendations', 'Computer Science']
+Clus got:  Computer Science 
+
+Simil got:  programs 
+
+Are American values set more by mainstream media than in other countries?
+['History of the United States', 'Mainstream']
+Clus got:  Social Media Marketing 
+
+Simil got:  both 
+
+Why do liberals follow a candidate, a la Obama, based only on his appearance and image marketing instead of his political views and experience?
+['Questions That Contain Assumptions', 'Politics']
+Clus got:  Social Media Marketing 
+
+Simil got:  rather 
+
+what do trajectories of satellites that are part of many body systems like saturn look like?
+['Physics', 'Dynamical Systems', 'Astronomy']
+Clus got:  Business Models 
+
+Simil got:  well 
+
+Is it possible to disable the Metro UI on Windows 8 and if so how?
+['Microsoft Windows', 'Windows 8']
+How do I create a stage name for myself?
+['Entertainment Industry', 'Entertainment', 'Musicians', 'Hip Hop Music', 'Names and Naming', 'Hip Hop and Rap Artists', 'Pseudonyms', 'Authors']
+Simil got:  same 
+
+How editorials in newspapers are different from articles?
+['Editorials', 'Newspapers']
+Simil got:  publications 
+
+What are the pros and cons of the Stephen Colbert "Late Show" being based in New York vs. Los Angeles?
+['New York City', 'Stephen Colbert', 'Los Angeles', 'CBS (company)', 'CBS Late Night Shows', 'Late Show Host Transition (2014-2015)']
+Simil got:  , 
+
+Is there a scientific reason for disliking the taste of alcohol?
+['Drinking (alcohol)', 'Alcohol', 'Human Physiology']
+Simil got:  fact 
+
+will gate score more than cut off in mechanical be helpfull in getting a good job or it willl waste, i'll hv to appear next year again?
+['The Future', 'GATE', 'GATE (Graduate Aptitude Test in Engineering)']
+What are some practices to help retain a dream?
+['Sleep Habits', 'Dreams and Dreaming', 'Dreaming', 'Sleep']
+Simil got:  able 
+
+Where's the best place to get a Hi8 tape coverted to DVD near Santa Clara, CA?
+['Videotapes', 'Santa Clara, CA']
+Simil got:  you 
+
+I always get bullied when I school. And when I become a collegian, I get bullied too. My question is how can I forget my worse experience in school and my campus?
+['Medicine and Healthcare', 'Bullying', 'Psychiatry', 'Psychology']
+Simil got:  even 
+
+What are the best books to learn c++?
+['Computer Programming', 'Programming Languages', 'Book Recommendations', 'Computer Science', 'C++ (programming language)', 'Learning to Program']
+Clus got:  Books 
+
+Simil got:  book 
+
+Have you read Hunger Games?
+['Survey Question', 'The Hunger Games (2008 book)', 'Poll Question', 'The Hunger Games (creative franchise)']
+Simil got:  game 
+
+What are some good pointers for giving my first design talk?
+['Designers', 'Interaction Design', 'IxDA', 'Conferences and Conventions', 'Public Speaking']
+Clus got:  Product Design 
+
+Simil got:  give 
+
+Jazz, How would you explain it?
+['Jazz Music', 'Survey Questions', 'Jazz']
+Simil got:  did 
+
+What are some of the best answers on Cristiano Ronaldo on Quora?
+['Quora', 'Lists of Top Quora Content', 'Football (Soccer)', 'Cristiano Ronaldo (football player)', 'Answers (Quora feature)', 'Best of X', 'Real Madrid C.F.', 'Manchester United']
+Is backblaze a good online storage backup method ?
+['Cloud Storage', 'The Internet', 'Digital Storage', 'Backblaze']
+What data APIs or sources should be in my O'Reilly guide?
+['Computer Programming', 'Application Programming Interfaces (API)', 'Data', 'Datasets']
+Simil got:  information 
+
+How would you design an icon that is 11px by 11px in size that represents the concept "dock this element to the left side of the screen"?
+['Survey Questions']
+Who are some space photographers or scientists shooting from space?
+['Outer Space', 'NASA', 'SpaceX', 'Photography', 'Photographers']
+Simil got:  nasa 
+
+How can I learn more about effective router configuration for higher quality internet?
+['Routers', 'Computer Networking', 'Internet Service Providers', 'Wireless Routers', 'Internet Sharing Routers', 'Router Problems']
+Clus got:  User Experience 
+
+Simil got:  better 
+
+Is it possible to gain access to the top of any of the 3 Barbican towers in London?
+['London', 'Information Architecture', 'Architecture', 'Modernist Architecture']
+Simil got:  . 
+
+What are the best songs in a Disney animated film?
+['Songs', 'Movies', 'Disney', 'What Are the Best X?', 'Disney Movies']
+Clus got:  Movies 
+
+Simil got:  movie 
+
+What online services for SMB similar to Freshbooks are there in Germany?
+['Germany', 'Software-as-a-Service (SaaS)', 'Startups', 'Startups in Germany']
+What companies are still relying on cold calling?  Are any new startups using cold calling as their sales and marketing strategy?
+['Marketing']
+Clus got:  Business Strategy 
+
+Simil got:  rather 
