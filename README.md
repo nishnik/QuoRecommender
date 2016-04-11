@@ -14,7 +14,6 @@
 ##Packages Required
 - nltk
 - gensim
-- ubuntu 
 - numpy
 
 **Members:**
